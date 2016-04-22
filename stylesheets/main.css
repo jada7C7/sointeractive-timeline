@@ -27,10 +27,12 @@
 
 .event__date {
   font-weight: bold;
+  font-size: 14px;
 }
 
 .event__desc {
   margin-left: 49px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -56,6 +58,13 @@
   line-height: 30px;
 }
 
+.bulletpoint__icon:hover {
+  color: #fff;
+  background: linear-gradient(0deg, #56b08b, #73d2ab 89%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .94);
+  cursor: pointer;
+}
+
 .bulletpoint__icon--past {
   color: #122244;
   background: linear-gradient(0deg, #40789d, #6cc7ee 89%);
@@ -65,8 +74,91 @@
 /*
  * Desktop styles
  */
-.bulletpoint__icon:hover {
-  color: #fff;
-  background: linear-gradient(0deg, #56b08b, #73d2ab 89%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .94);
+ @media only screen and (min-width: 1024px) {
+   .timeline {
+     background-color: #122244;
+     height: 19px;
+     border-radius: 4px;
+     margin-top: 26px;
+     margin-bottom: 26px;
+     box-shadow: 0 -10px 19px rgba(168, 119, 178, .3);
+   }
+
+   .event {
+     display: inline-block;
+     position: relative; /* for tooltip */
+   }
+
+   .event__desc {
+     display: none;
+   }
+
+   .event__date {
+     display: inline-block;
+     width: 103px;
+     outline: 1px solid #73d2ab;
+     padding: 10px 0;
+     margin-left: -10px;
+     margin-top: -10px;
+     margin-bottom: 10px;
+     /*font-size: 10px;*/
+   }
+
+   .bulletpoint {
+     margin-top: -9px;
+   }
+
+   .bulletpoint:hover + .event__desc {
+     display: block;
+     text-align: center;
+     color: #122244;
+     background-color: #fff;
+     border: 1px solid #73d2ab;
+     padding: 10px;
+     margin-left: 0;
+     width: 83px;
+     position: absolute;
+     top: -120px;
+     left: 0;
+     transform: translateX(calc(-50% + 37px / 2));
+   }
+
+   .bulletpoint:hover + .event__desc::before {
+     content: "";
+     border-top: 10px solid #73d2ab;
+     border-left: 10px solid transparent;
+     border-right: 10px solid transparent;
+     height: 10px;
+     position: absolute;
+     top: 87px;
+     left: calc(83px / 2); /* half of width of tooltip */
+     transform: translateX(calc(-50%);
+   }
+
+   /*[data-desc] {
+     position: relative;
+   }
+
+   [data-desc]:hover::after {
+     content: attr(data-desc);
+     position: absolute;
+     top: -80px;
+     left: 0;
+     background-color: #fff;
+     border: 1px solid #73d2ab;
+     color: #122244;
+     width: 200px;
+     transform: translateX(calc(-50% + 37px / 2));
+   }
+
+   [data-desc]:hover::before {
+     content: "";
+     border-top: 10px solid red;
+     border-left: 10px solid transparent;
+     border-right: 10px solid transparent;
+     position: absolute;
+     top: -20px;
+     left: 0px;
+     height: 10px;
+   }*/
 }

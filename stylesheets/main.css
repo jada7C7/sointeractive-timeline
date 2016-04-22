@@ -12,6 +12,14 @@
 /*
  * Mobile styles
  */
+.timeline {
+  list-style-type: none;
+  padding: 0;
+  margin: 16px;
+}
+
+/********************/
+
 .event {
   color: #122244;
   font-family: "Open Sans";
@@ -22,6 +30,7 @@
 }
 
 .event__desc {
+  margin-left: 49px;
   text-transform: uppercase;
 }
 
@@ -32,7 +41,7 @@
   width: 37px;
   height: 37px;
   border-radius: 50%;
-  /*float: left;*/
+  float: left;
   display: flex;
   justify-content: center;
   align-items: center;

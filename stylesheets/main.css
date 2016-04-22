@@ -84,6 +84,8 @@
      box-shadow: 0 -10px 19px rgba(168, 119, 178, .3);
    }
 
+   /********************/
+
    .event {
      display: inline-block;
      position: relative; /* for tooltip */
@@ -101,8 +103,10 @@
      margin-left: -10px;
      margin-top: -10px;
      margin-bottom: 10px;
-     /*font-size: 10px;*/
+     font-size: 10px;
    }
+
+   /********************/
 
    .bulletpoint {
      margin-top: -9px;
@@ -118,47 +122,29 @@
      margin-left: 0;
      width: 83px;
      position: absolute;
-     top: -120px;
+     top: -111px;
      left: 0;
      transform: translateX(calc(-50% + 37px / 2));
+   }
+
+   .bulletpoint:hover + .event__desc::before,
+   .bulletpoint:hover + .event__desc::after {
+     content: "";
+     border-left: 6px solid transparent;
+     border-right: 6px solid transparent;
+     height: 6px;
+     position: absolute;
+     left: calc(103px / 2); /* half of width of tooltip */
+     transform: translateX(-50%);
    }
 
    .bulletpoint:hover + .event__desc::before {
-     content: "";
-     border-top: 10px solid #73d2ab;
-     border-left: 10px solid transparent;
-     border-right: 10px solid transparent;
-     height: 10px;
-     position: absolute;
-     top: 87px;
-     left: calc(83px / 2); /* half of width of tooltip */
-     transform: translateX(calc(-50%);
+     border-top: 6px solid #73d2ab;
+     top: 82px;
    }
 
-   /*[data-desc] {
-     position: relative;
+   .bulletpoint:hover + .event__desc::after {
+     border-top: 6px solid #fff;
+     top: 81px;
    }
-
-   [data-desc]:hover::after {
-     content: attr(data-desc);
-     position: absolute;
-     top: -80px;
-     left: 0;
-     background-color: #fff;
-     border: 1px solid #73d2ab;
-     color: #122244;
-     width: 200px;
-     transform: translateX(calc(-50% + 37px / 2));
-   }
-
-   [data-desc]:hover::before {
-     content: "";
-     border-top: 10px solid red;
-     border-left: 10px solid transparent;
-     border-right: 10px solid transparent;
-     position: absolute;
-     top: -20px;
-     left: 0px;
-     height: 10px;
-   }*/
 }

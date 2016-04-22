@@ -41,16 +41,15 @@
 .bulletpoint__icon {
   color: #fff;
   text-align: center;
-  line-height: 38px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  line-height: 30px;
 }
 
 .bulletpoint__icon--past {
   color: #122244;
   background: linear-gradient(0deg, #40789d, #6cc7ee 89%);
-  width: 29px;
-  height: 29px;
-  border-radius: 50%;
-  line-height: 30px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .94);
 }
 
@@ -60,9 +59,5 @@
 .bulletpoint__icon:hover {
   color: #fff;
   background: linear-gradient(0deg, #56b08b, #73d2ab 89%);
-  width: 29px;
-  height: 29px;
-  border-radius: 50%;
-  line-height: 30px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .94);
 }

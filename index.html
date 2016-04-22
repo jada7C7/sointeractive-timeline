@@ -8,54 +8,55 @@
     <link href="/favicon.png" rel="icon" type="image/png">
   </head>
   <body>
-    <br><br><br><br><br><br><br>
-
-    <ol class="timeline">
-      <li class="event">
-        <div class="bulletpoint">
-          <i class="fa fa-heart bulletpoint__icon bulletpoint__icon--past" aria-hidden="true"></i>
-        </div>
-        <p class="event__desc">
-          <time datetime="2015-06-02" class="event__date">02.06.2015</time><br>
-          Lorem ipsum dolor sit amet
-        </p>
-      </li>
-      <li class="event">
-        <div class="bulletpoint">
-          <i class="fa fa-flask bulletpoint__icon" aria-hidden="true"></i>
-        </div>
-        <p class="event__desc">
-          <time datetime="2015-06-11" class="event__date">11.06.2015</time><br>
-          Lorem ipsum dolor sit amet
-        </p>
-      </li>
-      <li class="event">
-        <div class="bulletpoint">
-          <i class="fa fa-gavel bulletpoint__icon" aria-hidden="true"></i>
-        </div>
-        <p class="event__desc">
-          <time datetime="2015-06-15" class="event__date">15.06.2015</time><br>
-          Lorem ipsum dolor sit amet
-        </p>
-      </li>
-      <li class="event">
-        <div class="bulletpoint">
-          <i class="fa fa-graduation-cap bulletpoint__icon" aria-hidden="true"></i>
-        </div>
-        <p class="event__desc">
-          <time datetime="2015-06-22" class="event__date">22.06.2015</time><br>
-          Lorem ipsum dolor sit amet
-        </p>
-      </li>
-      <li class="event">
-        <div class="bulletpoint">
-          <i class="fa fa-trophy bulletpoint__icon" aria-hidden="true"></i>
-        </div>
-        <p class="event__desc">
-          <time datetime="2015-06-30" class="event__date">30.06.2015</time><br>
-          Lorem ipsum dolor sit amet
-        </p>
-      </li>
-    </ol>
+    <section class="timeline">
+      <ol class="timeline__axis">
+        <li class="event" style="position: absolute; left: calc(15% - 37px / 2);">
+          <div class="bulletpoint">
+            <i class="fa fa-heart bulletpoint__icon bulletpoint__icon--past" aria-hidden="true"></i>
+          </div>
+          <p class="event__desc">
+            <time datetime="2015-06-02" class="event__date">02.06.2015</time><br>
+            Lorem ipsum dolor sit amet
+          </p>
+        </li>
+        <li class="event" style="position: absolute; left: calc(40% - 37px / 2);">
+          <div class="bulletpoint">
+            <i class="fa fa-flask bulletpoint__icon" aria-hidden="true"></i>
+          </div>
+          <p class="event__desc">
+            <time datetime="2015-06-11" class="event__date">11.06.2015</time><br>
+            Lorem ipsum dolor sit amet
+          </p>
+        </li>
+        <li class="event" style="position: absolute; left: calc(50% - 37px / 2);">
+          <div class="bulletpoint">
+            <i class="fa fa-gavel bulletpoint__icon" aria-hidden="true"></i>
+          </div>
+          <p class="event__desc">
+            <time datetime="2015-06-15" class="event__date">15.06.2015</time><br>
+            Lorem ipsum dolor sit amet
+          </p>
+        </li>
+        <li class="event" style="position: absolute; left: calc(70% - 37px / 2);">
+          <div class="bulletpoint">
+            <i class="fa fa-graduation-cap bulletpoint__icon" aria-hidden="true"></i>
+          </div>
+          <p class="event__desc">
+            <time datetime="2015-06-22" class="event__date">22.06.2015</time><br>
+            Lorem ipsum dolor sit amet
+          </p>
+        </li>
+        <li class="event" style="position: absolute; left: calc(90% - 37px / 2);">
+          <div class="bulletpoint">
+            <i class="fa fa-trophy bulletpoint__icon" aria-hidden="true"></i>
+          </div>
+          <p class="event__desc">
+            <time datetime="2015-06-30" class="event__date">30.06.2015</time><br>
+            Lorem ipsum dolor sit amet
+          </p>
+        </li>
+        <div class="timeline__progress"></div>
+      </ol>
+    </section>
   </body>
 </html>

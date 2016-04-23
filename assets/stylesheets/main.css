@@ -119,7 +119,7 @@
 
    .event {
      display: inline-block;
-     position: relative; /* for tooltip */
+     position: absolute;
    }
 
    .event__desc {

@@ -12,7 +12,8 @@ function createTimeline(startDate, endDate, timelineEvents, currentDate) {
   var timelineDays = timelineEnd.diff(timelineStart, 'days');
 
   var html = '<ol class="timeline__axis">';
-  for (timelineEvent of timelineEvents) {
+  for (var i = 0, len = timelineEvents.length; i < len; i++) {
+    var timelineEvent = timelineEvents[i];
     var eventDate = moment(timelineEvent[0]);
     var eventDateAttr = eventDate.format("YYYY-MM-DD");
     var eventDateTxt = eventDate.format("DD.MM.YYYY");
@@ -28,7 +29,7 @@ function createTimeline(startDate, endDate, timelineEvents, currentDate) {
     var eventTitle = timelineEvent[1];
     var eventIcon = timelineEvent[2];
 
-    html += '<li class="event" style="position: absolute; left: calc(' + eventPositon + '% - 37px / 2);">\
+    html += '<li class="event" style="left: calc(' + eventPositon + '% - 37px / 2);">\
       <div class="bulletpoint">\
         <i class="fa fa-' + eventIcon + ' bulletpoint__icon bulletpoint__icon--past" aria-hidden="true"></i>\
       </div>\
@@ -52,5 +53,7 @@ function createTimeline(startDate, endDate, timelineEvents, currentDate) {
   $('.timeline__progress-bar').css('width', progressBarPosition + '%');
 }
 
-// createTimeline('2015-06-01', '2015-06-30', timelineEvents);
-createTimeline('2015-06-01', '2015-06-30', timelineEvents, '2015-06-10');
+$(document).ready(function () {
+  // createTimeline('2015-06-01', '2015-06-30', timelineEvents);
+  createTimeline('2015-06-01', '2015-06-30', timelineEvents, '2015-06-10');
+});

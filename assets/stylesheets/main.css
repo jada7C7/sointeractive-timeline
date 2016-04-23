@@ -109,9 +109,10 @@
      border-radius: 4px;
      height: 11px;
      max-width: calc(100% - 8px);
-     width: 33%;
      margin-top: 4px;
      margin-left: 4px;
+     /* Progress bar width (dynamically set by JS): */
+     /*width: 30%; */
    }
 
    /********************/

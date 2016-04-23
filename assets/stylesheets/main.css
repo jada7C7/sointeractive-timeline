@@ -1,8 +1,8 @@
 /*
  * Node.js modules
  */
-@import "../node_modules/normalize.css/normalize.css";
-@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
 
 /*
  * Fonts
@@ -56,7 +56,7 @@
   height: 29px;
   border-radius: 50%;
   line-height: 30px;
-  transition: all .2s;
+  transition: color .2s;
 }
 
 .bulletpoint__icon:hover {
@@ -94,6 +94,13 @@
    }
 
    .timeline__progress-bar {
+     /* Firefox 45 fallback (FF doesn't support offset value):
+      * "An offset can be either a relative value, expressed as a <percentage>, or an absolute <length> value. Positive values are offset towards the right or the bottom, whichever is suitable. Negative values are offset in the other directions."
+      * https://developer.mozilla.org/en-US/docs/Web/CSS/position_value
+      */
+     background:
+      radial-gradient(91px at center right, #8ac5f2, transparent),
+      linear-gradient(0deg, #2f5a7e, #75d8ff);
      background:
       radial-gradient(91px at center right 120px, #8ac5f2, transparent),
       linear-gradient(0deg, #2f5a7e, #75d8ff);
@@ -146,8 +153,12 @@
      width: 83px;
      position: absolute;
      top: -111px;
-     left: 0;
-     transform: translateX(calc(-50% + 37px / 2));
+     /* IE11 fallback: */
+     left: 18px; /* 37px / 2 */
+     transform: translateX(-50%);
+     /* The same as:
+      * transform: translateX(calc(-50% + 37px / 2));
+      */
    }
 
    .bulletpoint:hover + .event__desc::before,

@@ -93,8 +93,11 @@
      width: 80%;
    }
 
-   .timeline__progress {
-     background: linear-gradient(0deg, #2f5a7e, #75d8ff);
+   .timeline__progress-bar {
+     background:
+      radial-gradient(91px at center right 120px, #8ac5f2, transparent),
+      linear-gradient(0deg, #2f5a7e, #75d8ff);
+     background-blend-mode: color-dodge;
      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45);
      border-radius: 4px;
      height: 11px;

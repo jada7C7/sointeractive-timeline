@@ -6,7 +6,14 @@ var timelineEvents = [
   ['2015-06-30', 'Lorem ipsum dolor sit amet', 'trophy']
 ];
 
-function createTimeline(startDate, endDate, timelineEvents, currentDate) {
+var timelineEvents2 = [
+  ['2016-03-01', 'Lorem ipsum dolor sit amet', 'motorcycle'],
+  ['2016-05-29', 'Lorem ipsum dolor sit amet', 'futbol-o'],
+  ['2016-07-19', 'Lorem ipsum dolor sit amet', 'star'],
+  ['2016-08-22', 'Lorem ipsum dolor sit amet', 'child']
+];
+
+function createTimeline(containerId, startDate, endDate, timelineEvents, currentDate) {
   var timelineStart = moment(startDate, "YYYY-MM-DD");
   var timelineEnd = moment(endDate, "YYYY-MM-DD");
   var timelineDays = timelineEnd.diff(timelineStart, 'days');
@@ -44,18 +51,19 @@ function createTimeline(startDate, endDate, timelineEvents, currentDate) {
         <i class="fa fa-' + eventIcon + ' bulletpoint__icon ' + pastEventClass + '" aria-hidden="true"></i>\
       </div>\
       <p class="event__desc">\
-        <time datetime="' + eventDateAttr + '" class="event__date">' + eventDateTxt + '</time>\
+        <time datetime="' + eventDateAttr + '" class="event__date">' + eventDateTxt + '</time><br>\
         <span class="event__title">' + eventTitle + '</span>\
       </p>\
     </li>';
   }
 
   html += '<div class="timeline__progress-bar"></div></ol>';
-  $('.timeline').html(html);
-  $('.timeline__progress-bar').css('width', progressBarPosition + '%');
+  $(containerId).html(html);
+  $(containerId + ' .timeline__progress-bar').css('width', progressBarPosition + '%');
 }
 
 $(document).ready(function () {
-  // createTimeline('2015-06-01', '2015-06-30', timelineEvents);
-  createTimeline('2015-06-01', '2015-06-30', timelineEvents, '2015-06-10');
+  // createTimeline('#one', '2015-06-01', '2015-06-30', timelineEvents);
+  createTimeline('#one', '2015-06-01', '2015-06-30', timelineEvents, '2015-06-10');
+  // createTimeline('#two', '2016-03-01', '2016-08-22', timelineEvents2, '2016-07-03');
 });

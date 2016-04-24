@@ -52,6 +52,10 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
     return '<div class="timeline__progress-bar"></div></ol>';
   };
 
+  function setProgressBarWidth() {
+    $(containerId + ' .timeline__progress-bar').css('width', progressBarPosition + '%');
+  }
+
   return {
     generate: function () {
       var html = openTimelineList();
@@ -61,7 +65,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
       html += closeTimelineList();
 
       $(containerId).html(html);
-      $(containerId + ' .timeline__progress-bar').css('width', progressBarPosition + '%');
+      setProgressBarWidth();
     }
   };
 };

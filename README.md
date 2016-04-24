@@ -5,11 +5,9 @@
 
   ```javascript
   var timelineEvents = [
-    ['2015-06-02', 'Lorem ipsum dolor sit amet', 'heart'],
-    ['2015-06-11', 'Lorem ipsum dolor sit amet', 'flask'],
-    ['2015-06-15', 'Lorem ipsum dolor sit amet', 'gavel'],
-    ['2015-06-22', 'Lorem ipsum dolor sit amet', 'graduation-cap'],
-    ['2015-06-30', 'Lorem ipsum dolor sit amet', 'trophy']
+    [new Date('2015-12-04'), 'Lorem ipsum dolor sit amet', 'heart'],
+    [new Date('2016-01-11'), 'Lorem ipsum dolor sit amet', 'flask'],
+    [new Date('2016-05-23'), 'Lorem ipsum dolor sit amet', 'trophy']
   ];
   ```
 

@@ -1,12 +1,12 @@
 function createTimeline(containerId, startDate, endDate, timelineEvents, currentDate) {
-  var timelineStart = moment(startDate, "YYYY-MM-DD");
-  var timelineEnd = moment(endDate, "YYYY-MM-DD");
+  var timelineStart = moment(startDate);
+  var timelineEnd = moment(endDate);
   var timelineDays = timelineEnd.diff(timelineStart, 'days');
 
   if (currentDate === undefined) {
     currentDate = moment();
   } else {
-    currentDate = moment(currentDate, "YYYY-MM-DD");
+    currentDate = moment(currentDate);
   }
   var progressBarDaysTillNow = currentDate.diff(timelineStart, 'days');
   var progressBarPosition = progressBarDaysTillNow / timelineDays * 100;
@@ -15,8 +15,8 @@ function createTimeline(containerId, startDate, endDate, timelineEvents, current
   for (var i = 0, len = timelineEvents.length; i < len; i++) {
     var timelineEvent = timelineEvents[i];
     var eventDate = moment(timelineEvent[0]);
-    var eventDateAttr = eventDate.format("YYYY-MM-DD");
-    var eventDateTxt = eventDate.format("DD.MM.YYYY");
+    var eventDateAttr = eventDate.format('YYYY-MM-DD');
+    var eventDateTxt = eventDate.format('DD.MM.YYYY');
     var eventDaysSinceStart = eventDate.diff(timelineStart, 'days');
 
     // devide number of days to given event (since start of the timeline) by

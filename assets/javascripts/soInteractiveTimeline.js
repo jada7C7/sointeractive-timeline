@@ -1,11 +1,4 @@
 var soInteractiveTimeline = function (containerId, startDate, endDate, timelineEvents, fakeDate) {
-  var fakeDateOrCurrentDate = function (date) {
-    if (date === undefined) {
-      return moment();
-    } else {
-      return moment(date);
-    }
-  };
 
   var timelineStart = moment(startDate);
   var timelineEnd = moment(endDate);
@@ -14,12 +7,19 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
   var progressBarDaysTillNow = currentDate.diff(timelineStart, 'days');
   var progressBarPosition = progressBarDaysTillNow / timelineDays * 100;
 
+  function fakeDateOrCurrentDate(date) {
+    if (date === undefined) {
+      return moment();
+    } else {
+      return moment(date);
+    }
+  };
 
-  var openTimelineList = function () {
+  function openTimelineList() {
     return '<ol class="timeline__axis">';
   };
 
-  var generateListItem = function (timelineEvent) {
+  function generateListItem(timelineEvent) {
       var eventDate = moment(timelineEvent[0]);
       var eventDateAttr = eventDate.format('YYYY-MM-DD');
       var eventDateTxt = eventDate.format('DD.MM.YYYY');
@@ -48,7 +48,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
       </li>';
   };
 
-  var closeTimelineList = function () {
+  function closeTimelineList() {
     return '<div class="timeline__progress-bar"></div></ol>';
   };
 

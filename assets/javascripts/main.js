@@ -14,7 +14,7 @@ var timelineEvents2 = [
 ];
 
 $(document).ready(function () {
-  // sointeractiveTimeline('#one', new Date('2015-06-01'), new Date('2015-06-30'), timelineEvents).generate();
-  sointeractiveTimeline('#one', new Date('2015-06-01'), new Date('2015-06-30'), timelineEvents, new Date('2015-06-10')).generate();
-  // sointeractiveTimeline('#two', new Date('2016-03-01'), new Date('2016-08-22'), timelineEvents2, new Date('2016-07-03')).generate();
+  // soInteractiveTimeline('#one', new Date('2015-06-01'), new Date('2015-06-30'), timelineEvents).generate();
+  soInteractiveTimeline('#one', new Date('2015-06-01'), new Date('2015-06-30'), timelineEvents, new Date('2015-06-10')).generate();
+  // soInteractiveTimeline('#two', new Date('2016-03-01'), new Date('2016-08-22'), timelineEvents2, new Date('2016-07-03')).generate();
 });

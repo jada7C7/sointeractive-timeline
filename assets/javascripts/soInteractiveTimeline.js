@@ -1,4 +1,4 @@
-var sointeractiveTimeline = function (containerId, startDate, endDate, timelineEvents, fakeDate) {
+var soInteractiveTimeline = function (containerId, startDate, endDate, timelineEvents, fakeDate) {
   var fakeDateOrCurrentDate = function (date) {
     if (date === undefined) {
       return moment();

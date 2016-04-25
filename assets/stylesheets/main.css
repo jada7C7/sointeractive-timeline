@@ -111,8 +111,7 @@
      max-width: calc(100% - 8px);
      margin-top: 4px;
      margin-left: 4px;
-     /* Progress bar width (dynamically set by JS): */
-     /*width: 30%; */
+     width: 0%;
    }
 
    /********************/

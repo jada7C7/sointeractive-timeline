@@ -1,11 +1,12 @@
 var soInteractiveTimeline = function (containerId, startDate, endDate, timelineEvents, fakeDate) {
-
+  var containerId = '#' + containerId;
   var timelineStart = moment(startDate);
   var timelineEnd = moment(endDate);
   var timelineDays = timelineEnd.diff(timelineStart, 'days');
   var currentDate = fakeDateOrCurrentDate(fakeDate);
   var progressBarDaysTillNow = currentDate.diff(timelineStart, 'days');
   var progressBarPosition = progressBarDaysTillNow / timelineDays * 100;
+  progressBarPosition = progressBarPosition > 100 ? 100 : progressBarPosition;
 
   function fakeDateOrCurrentDate(date) {
     if (date === undefined) {
@@ -52,8 +53,10 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
     return '<div class="timeline__progress-bar"></div></ol>';
   };
 
-  function setProgressBarWidth() {
-    $(containerId + ' .timeline__progress-bar').css('width', progressBarPosition + '%');
+  function animateProgressBar() {
+    var animationName = 'loading-' + containerId.slice(1);
+    $(containerId + ' style').text('@keyframes ' + animationName + ' { from { } to { width: ' + progressBarPosition + '% } }');
+    $(containerId + ' .timeline__progress-bar').css('animation', animationName + ' 1s forwards');
   }
 
   return {
@@ -64,8 +67,8 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
       }
       html += closeTimelineList();
 
-      $(containerId).html(html);
-      setProgressBarWidth();
+      $(containerId).html(html).prepend('<style></style>');
+      animateProgressBar();
     }
   };
 };

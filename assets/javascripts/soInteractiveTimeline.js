@@ -43,7 +43,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
       var pastEventClass = progressBarDaysTillNow >= eventDaysSinceStart ? 'bulletpoint__icon--past' : '';
 
       return '<li class="event" style="left: calc(' + eventPositon + '% - 37px / 2);">\
-        <div class="bulletpoint">\
+        <div class="bulletpoint" tabindex="0">\
           <i class="fa fa-' + eventIcon + ' bulletpoint__icon ' + pastEventClass + '" aria-hidden="true"></i>\
         </div>\
         <p class="event__desc">\

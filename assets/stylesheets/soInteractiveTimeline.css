@@ -170,7 +170,7 @@
    .event__date {
      display: inline-block;
      width: 83px;
-     outline: 1px solid #73d2ab;
+     border-bottom: 1px solid #73d2ab;
      padding: 10px;
      margin-left: -10px;
      margin-top: -10px;

@@ -1,8 +1,8 @@
 /*
  * Node.js modules
  */
-@import "../../node_modules/normalize.css/normalize.css";
-@import "../../node_modules/font-awesome/css/font-awesome.min.css";
+@import '../../node_modules/normalize.css/normalize.css';
+@import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 /*
  * Fonts
@@ -22,7 +22,7 @@
 
 .event {
   color: #122244;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .event__date {
@@ -126,14 +126,52 @@
    }
 
    .event__desc {
-     display: none;
+     text-align: center;
+     color: #122244;
+     background-color: #fff;
+     border: 1px solid #73d2ab;
+     padding: 10px;
+     margin-left: 0;
+     width: 83px;
+     height: 62px;
+     position: absolute;
+     top: -121px;
+     opacity: 0;
+     transition: top .2s, opacity .2s;
+     /* IE11 fallback: */
+     left: 18px; /* 37px / 2 */
+     transform: translateX(-50%);
+     /* The same as:
+      * transform: translateX(calc(-50% + 37px / 2));
+      */
+   }
+
+   .event__desc::before,
+   .event__desc::after {
+     content: '';
+     border-left: 6px solid transparent;
+     border-right: 6px solid transparent;
+     height: 6px;
+     position: absolute;
+     left: calc(103px / 2); /* half of width of tooltip */
+     transform: translateX(-50%);
+   }
+
+   .event__desc::before {
+     border-top: 6px solid #73d2ab;
+     top: 82px;
+   }
+
+   .event__desc::after {
+     border-top: 6px solid #fff;
+     top: 81px;
    }
 
    .event__date {
      display: inline-block;
-     width: 103px;
+     width: 83px;
      outline: 1px solid #73d2ab;
-     padding: 10px 0;
+     padding: 10px;
      margin-left: -10px;
      margin-top: -10px;
      font-size: 10px;
@@ -142,10 +180,9 @@
    .event__title {
      display: inline-block;
      height: 29px;
-     width: 103px;
+     width: 83px;
      margin-top: 10px;
      margin-bottom: 10px;
-     margin-left: -10px;
      overflow: hidden;
    }
 
@@ -157,47 +194,7 @@
 
    .bulletpoint:hover + .event__desc,
    .bulletpoint:focus + .event__desc {
-     display: block;
-     text-align: center;
-     color: #122244;
-     background-color: #fff;
-     border: 1px solid #73d2ab;
-     padding: 10px;
-     margin-left: 0;
-     width: 83px;
-     height: 62px;
-     position: absolute;
      top: -111px;
-     /* IE11 fallback: */
-     left: 18px; /* 37px / 2 */
-     transform: translateX(-50%);
-     /* The same as:
-      * transform: translateX(calc(-50% + 37px / 2));
-      */
-   }
-
-   .bulletpoint:hover + .event__desc::before,
-   .bulletpoint:hover + .event__desc::after,
-   .bulletpoint:focus + .event__desc::before,
-   .bulletpoint:focus + .event__desc::after {
-     content: "";
-     border-left: 6px solid transparent;
-     border-right: 6px solid transparent;
-     height: 6px;
-     position: absolute;
-     left: calc(103px / 2); /* half of width of tooltip */
-     transform: translateX(-50%);
-   }
-
-   .bulletpoint:hover + .event__desc::before,
-   .bulletpoint:focus + .event__desc::before {
-     border-top: 6px solid #73d2ab;
-     top: 82px;
-   }
-
-   .bulletpoint:hover + .event__desc::after,
-   .bulletpoint:focus + .event__desc::after{
-     border-top: 6px solid #fff;
-     top: 81px;
+     opacity: 1;
    }
 }

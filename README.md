@@ -51,7 +51,13 @@ var timelineEvents = [
 In order to generate timeline you need to execute `soInteractiveTimeline(containerId, startDate, endDate, timelineEvents, fakeDate).generate()` method in your *main.js* file. Take a note that **last parameter is optional** (if not provided current date will be used).
 
 ```javascript
-soInteractiveTimeline('my-superb-timeline', new Date('2015-06-01'), new Date('2015-06-30'), timelineEvents, new Date('2015-06-10')).generate();
+soInteractiveTimeline(
+    'my-superb-timeline',
+    new Date('2015-06-01'),
+    new Date('2015-06-30'),
+    timelineEvents,
+    new Date('2015-06-10')
+).generate();
 ```
 
 The last step is to add a container for our timeline in HTML:

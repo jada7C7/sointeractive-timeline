@@ -13,7 +13,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
     } else {
       return moment(date);
     }
-  };
+  }
 
   function calculateProgressBarPosition(progressBarDaysTillNow, timelineDays) {
     var progressBarPosition = progressBarDaysTillNow / timelineDays * 100;
@@ -22,7 +22,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
 
   function openTimelineList() {
     return '<ol class="timeline__axis">';
-  };
+  }
 
   function generateListItem(timelineEvent) {
       var eventDate = moment(timelineEvent[0]);
@@ -30,7 +30,7 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
       var eventDateTxt = eventDate.format('DD.MM.YYYY');
       var eventDaysSinceStart = eventDate.diff(timelineStart, 'days');
 
-      // devide number of days to given event (since start of the timeline) by
+      // divide number of days to given event (since start of the timeline) by
       // number of days timeline lasts and then multiply it by 100 to get number
       // of per cents, then multiply it by 0.8 (because timeline takes 80% width
       // of wrapper), then add 10 because timeline really starts at 10% and ends
@@ -51,11 +51,11 @@ var soInteractiveTimeline = function (containerId, startDate, endDate, timelineE
           <span class="event__title">' + eventTitle + '</span>\
         </p>\
       </li>';
-  };
+  }
 
   function closeTimelineList() {
     return '<div class="timeline__progress-bar"></div></ol>';
-  };
+  }
 
   function animateProgressBar() {
     var animationName = 'loading-' + containerId.slice(1);
